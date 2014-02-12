@@ -1,5 +1,6 @@
 GEM
   remote: https://rubygems.org/
+  remote: http://rubygems.org/
   specs:
     actionmailer (3.2.12)
       actionpack (= 3.2.12)
@@ -128,6 +129,7 @@ DEPENDENCIES
   director_gem (= 0.0.2)
   jquery-rails
   paperclip (~> 3.5.2)
+  rack
   rails (= 3.2.12)
   sass-rails (~> 3.2.3)
   sqlite3
