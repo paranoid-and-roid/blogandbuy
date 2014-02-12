@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  actors: MyString
+  description: MyText
+  director: MyString
+  filmname: MyString
+  image_url: MyString
+  length: MyString
+  price: 1.5
+  score: 1
+  release_year: MyString
+
+two:
+  actors: MyString
+  description: MyText
+  director: MyString
+  filmname: MyString
+  image_url: MyString
+  length: MyString
+  price: 1.5
+  score: 1
+  release_year: MyString

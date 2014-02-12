@@ -1,0 +1,47 @@
+<%= form_for(review) do |f| %>
+    <% if review.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(review.errors.count, "error") %> prohibited this review from being saved:</h2>
+
+          <ul>
+            <% review.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <fieldset>
+   <legend>Write a review of <span><%= @film.filmname %></span></legend>
+      <% if !current_user %>
+      <p class = 'large'>You must be logged in to submit a review.<br> If you have an account, please  <%= link_to "sign in", new_user_session_path %><br> If not, please <%= link_to 'register', new_user_registration_path %></p>
+        <% end %>
+    <div class="field">
+      <%= f.hidden_field :film_id %>
+    </div>
+    <div class="field">
+      <%= f.hidden_field :user_id %>
+    </div>
+    <div class="field">
+      <%= f.label :post, "Post your Review" %><br />
+      <%= f.text_area :post, rows: 12 %>
+    </div>
+    <div class="field">
+      <fieldset>
+        <legend>Your score for this film</legend>
+        <%= f.radio_button :score, 1 %><%= f.label 'review_score', 1 %>
+        <%= f.radio_button :score, 2 %><%= f.label 'review_score', 2 %>
+        <%= f.radio_button :score, 3 %><%= f.label 'review_score', 3 %>
+        <%= f.radio_button :score, 4 %><%= f.label 'review_score', 4 %>
+        <%= f.radio_button :score, 5 %><%= f.label 'review_score', 5 %>
+      </fieldset>
+    </div>
+
+    <div class="actions">
+      <% if current_user %>
+        <%= f.submit "Submit your review" %>
+
+      <% end %>
+    </div>
+    </fieldset>
+<% end %>

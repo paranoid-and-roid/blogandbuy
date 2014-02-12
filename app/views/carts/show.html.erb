@@ -1,0 +1,15 @@
+<% if notice %>
+    <p id="notice"><%= notice %></p>
+<% end %>
+<h2>Your basket of DVDs</h2>
+<ul>
+  <% @cart.line_items.each do |item| %>
+      <li><%= item.quantity %> copy/copies of <%= item.film.filmname %></li><br />
+  <% end %>
+  Total Price: <%= number_to_currency(@cart.total_price, :unit => '&euro;') %><br />
+  <br />
+  <p><%= link_to 'Return to List of Films', root_path, class: 'button' %></p>
+  <br />
+  <%= button_to "Proceed to checkout", new_order_path, method: :get %> <br />
+  <%= button_to "Empty Cart", @cart, :method => :delete, :confirm => "Are you sure you want to empty your shopping cart?" %>
+</ul>

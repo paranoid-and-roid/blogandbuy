@@ -1,0 +1,181 @@
+body {
+  background: #141;
+  color: #333;
+  font-family: "Calibri Light", verdana, arial, helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 18px;
+}
+
+#container {
+  background: #eee;
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+}
+
+header {
+  background: #141;
+  color: #fff;
+  height: auto;
+  padding: 20px 0;
+  margin-bottom:20px;
+  border-radius: 20px;
+  font-size: large;
+}
+
+footer {
+  text-align: center;
+  background: #141;
+  color: #fff;
+  padding: 20px 0;
+  border-radius: 20px;
+  margin-top: 20px;
+}
+
+#content {
+  padding-bottom: 20px;
+}
+
+th, td {
+  padding-left: 40px;
+}
+
+div {
+  &.field, &.actions {
+    margin-bottom: 10px;
+  }
+}
+
+#notice {
+  color: #b00;
+  font-size: 23px;
+  font-weight: bold;
+  padding-left: 30px;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: #ff8814;
+  display: table;
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid #ff8814;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+  h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 16px;
+    margin: -7px;
+    margin-bottom: 0px;
+    background-color: #ff8814;
+    color: #ff0;
+  }
+  ul li {
+    font-size: 12px;
+    list-style: square;
+  }
+}
+
+h1 {
+  text-align:center;
+}
+
+h2 {
+  text-align: center;
+}
+
+h3 em {
+  font-size: large;
+}
+
+dt {
+  font-size: large;
+  font-weight: bold;
+  color: #141;
+  margin-bottom: 10px;
+}
+
+dd:first-of-type {
+  margin-bottom: 5px;
+}
+
+.form_title {
+  text-align: left;
+}
+
+img {
+  height:150px;
+  width: 200px;
+}
+
+.image_detail {
+  float:left;
+  width: 200px;
+  margin-right: 60px;
+}
+
+table {
+  margin-bottom: 30px;
+}
+
+#partials {
+  margin-top: 40px;
+}
+
+#paginate {
+  text-align: center;
+  margin: 20px 0;
+}
+
+fieldset {
+  text-align: left;
+  width: 40%;
+  border: 3px solid #474;
+  border-radius: 5px;
+  margin: 20px 0;
+  padding: 20px;
+}
+
+fieldset p {
+  text-align: center;
+}
+
+fieldset fieldset {
+  width: 80%;
+}
+
+.large {
+  font-size: large;
+  font-weight: bold;
+}
+
+#register {
+  float: right;
+}
+
+.button {
+  padding: 10px;
+  background: #595;
+  color: #eee;
+  border-radius: 5px;
+  margin-left: 5px;
+  text-decoration: none;
+}
+
+fieldset button {
+  margin: 5px;
+  text-align: center;
+}
+
+.new {
+  margin: 20px 0;
+}
+

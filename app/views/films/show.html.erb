@@ -1,0 +1,58 @@
+<p id="notice"><%= notice %></p>
+<h1>  <%= @film.filmname %> </h1>
+
+<div class="image_detail">
+<p >
+  <%= image_tag(@film.image_url) %>
+</p>
+
+<p>
+  <%= @film.description %>
+</p>
+</div>
+
+<div class = "film_detail">
+<p>
+  <b>Directed by:</b>
+  <%= @film.director %>
+</p>
+<p>
+  <b>Starring:</b>
+  <%= @film.actors %>
+</p>
+
+<p>
+  <b>Year of release:</b>
+  <%= @film.release_year %>
+</p>
+
+<p>
+  <b>Running time:</b>
+  <%= @film.length %>
+</p>
+
+<p>
+  <b>Average Rating:</b>
+  <%= @film.my_average_score(@film.id) %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= number_to_currency(@film.price, :unit => '&euro;') %>
+</p>
+
+<%= button_to 'Add to my Cart', line_items_path(:film_id => @film) %>
+</div> <br><br>
+
+<%= link_to 'Return to Film List', root_path, class: 'button' %>
+<% if current_user.try(:admin?) %>
+<%= link_to 'Edit Film', edit_film_path(@film), class: 'button' %>
+<%= link_to 'Delete Film', @film, method: :delete, class: 'button', data: {confirm: 'Are you sure?'} %>
+<%= link_to 'Create New Film', new_film_path, class: 'button' %><br><br>
+<% end %>
+
+
+<div id="partials" >
+<%= render :partial => 'review_index', :locals => {:reviews => @film.reviews} %> <br>
+<%= render :partial => 'review_form', :locals=>{:review => Review.new(:film_id => @film.id)} %>
+</div>
