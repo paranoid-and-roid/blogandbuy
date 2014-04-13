@@ -3,7 +3,6 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.12'
 gem 'devise', '2.1.2'
 gem 'paperclip', '~> 3.5.2'
-gem 'director_gem', '0.0.2'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
