@@ -1,5 +1,3 @@
-require 'director_gem'
-
 class Film < ActiveRecord::Base
 
   attr_accessible :actors, :description, :director, :filmname, :image_url, :length, :price, :release_year, :score
