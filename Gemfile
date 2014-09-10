@@ -25,7 +25,8 @@ end
 
 group :production do
   # gems specifically for Heroku go here
-  gem "pg"
+  gem 'pg', '~> 0.17.1'
+  gem 'activerecord-postgresql-adapter', '0.0.1'
 end
 
 gem 'jquery-rails'
