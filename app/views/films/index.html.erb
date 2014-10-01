@@ -1,47 +1,46 @@
 <p id="notice" ><%= notice %></p>
 
   <fieldset>
-    <legend class = 'large'>Search for a film</legend>
-  <%= form_tag films_path, :method => 'get' do %>
-      <p>
-        <%= text_field_tag :search_query, params[:search_query] %>
-        <%= submit_tag "Search", :name => nil %>
-      </p>
-  <% end %>
+       <legend class = 'large'>Search for a film</legend>
+          <%= form_tag films_path, :method => 'get' do %>
+              <p>
+                <%= text_field_tag :search_query, params[:search_query] %>
+                <%= submit_tag "Search", :name => nil %>
+              </p>
+          <% end %>
   </fieldset>
 
 <% @films.each do |film| %>
-      <table>
-  <tr>
-    <td><%= image_tag(film.image_url) %></td>
-    <td>
-      <dl>
-        <dt><%= film.filmname %> </dt>
-          <dd><%= truncate(film.description, length: 60)  %></dd>
-          <dd><strong>Directed by: </strong><%= film.director %>
-         <!-- <dd><strong>Directed by: </strong><#%= film.imdb(film.id) %></dd> -->
-          <dd><strong>First Released: </strong><%= film.release_year %></dd>
-          <dd><strong>Running Time: </strong><%= film.length %></dd>
-          <dd><strong>Price: </strong><%= number_to_currency(film.price, :unit => '&euro;') %></dd>
-          <dd><strong>Average Rating: </strong><%= film.my_average_score(film.id) %></dd>
+   <table>
+        <tr>
+            <td><%= image_tag(film.image_url) %></td>
+            <td>
+              <dl>
+                <dt><%= film.filmname %> </dt>
+                 <!-- <dd><%= truncate(film.description, length: 60)  %></dd>  -->
+                  <dd><strong>Directed by: </strong><%= film.director %>
+                  <dd><strong>First Released: </strong><%= film.release_year %></dd>
+                  <dd><strong>Running Time: </strong><%= film.length %></dd>
+                  <dd><strong>Price: </strong><%= number_to_currency(film.price, :unit => '&euro;') %></dd>
+                <!-- <dd><dd><strong>Average Rating: </strong><%= film.my_average_score(film.id) %></dd></dd>  -->
+                  <dd><%= button_to 'Add to my Cart', line_items_path(:film_id => film) %></dd>
+              </dl>
+            </td>
 
-      </dl>
-      <%= button_to 'Add to my Cart', line_items_path(:film_id => film) %>
-    </td>
-    <td><%= link_to 'Show', film, class: 'button' %></td>
-    <% if current_user.try(:admin?) %>
-    <td><%= link_to 'Edit', edit_film_path(film), class: 'button' %></td>
-    <td><%= link_to 'Destroy', film, method: :delete, class: 'button', data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to 'Tell me more', film, class: 'small_button' %></td>
+
+            <% if current_user.try(:admin?) %>
+                 <td><%= link_to 'Edit', edit_film_path(film), class: 'small_button' %></td>
+                 <td><%= link_to 'Destroy', film, method: :delete, class: 'small_button', data: { confirm: 'Are you sure?' } %></td>
+             <% end %>
         </tr>
-    <% end %>
     </table>
-
 <% end %>
 
-<br /><br />
+<nav>
+    <% if current_user.try(:admin?) %>
+        <%= link_to 'Create New Film', new_film_path, class: 'button' %>
+    <% end %>
+</nav>
 
 <div id="paginate"><%= will_paginate @films %></div>
-
-<% if current_user.try(:admin?) %>
-<%= link_to 'New Film', new_film_path, class: 'button' %>
-<% end %>

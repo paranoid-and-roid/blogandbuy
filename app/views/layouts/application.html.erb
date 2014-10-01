@@ -13,29 +13,30 @@
     <h1>BlogAndBuy</h1>
   </header>
 
-  <div id="content" >
-  <%= link_to "Film Index", root_path, class: 'button' %>
-  <% unless current_cart.line_items.empty? %>
-  <%= link_to 'See Your Cart', see_your_cart_path, class: 'button' %>
+  <nav>
+      <%= link_to "Film Index", root_path, class: 'button' %>
+
+      <% unless current_cart.line_items.empty? %>
+         <%= link_to 'See Your Cart', see_your_cart_path, class: 'button' %>
       <% end %>
 
-  <% if current_user.try(:admin) %>
-  <%= link_to "Reviews", reviews_path, class: 'button' %>
-  <% end %>
+      <% if current_user.try(:admin) %>
+         <%= link_to "Reviews", reviews_path, class: 'button' %>
+      <% end %>
 
-<div id="register">
-<% if user_signed_in? %>
-    <div>Signed in as... <span class = 'large'><%= current_user.email %></span> <%= link_to 'Sign out', destroy_user_session_path, :method => :delete, class: 'button' %> </div>
-<% else %>
-    <%= link_to 'Register', new_user_registration_path, class: 'button' %> or <%= link_to 'Sign in', new_user_session_path, class: 'button' %>
-<% end %>
-</div>
- </div>
+    <div id="register">
+        <% if user_signed_in? %>
+            <div>Signed in as... <span class = 'large'><%= current_user.email %></span> <%= link_to 'Sign out', destroy_user_session_path, :method => :delete, class: 'button' %> </div>
+        <% else %>
+            <%= link_to 'Register', new_user_registration_path, class: 'button' %> or <%= link_to 'Sign in', new_user_session_path, class: 'button' %>
+        <% end %>
+    </div>
+</nav>
 
 <%= yield %>
 
 <footer>
-  <p>Copyright PJ Dunlevy &copy; 2013</p>
+  <p>Copyright Patrick Dunlevy &copy; 2013</p>
 </footer>
 
 </div>
