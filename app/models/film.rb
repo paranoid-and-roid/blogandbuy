@@ -1,7 +1,7 @@
 class Film < ActiveRecord::Base
 
   attr_accessible :actors, :description, :director, :filmname, :image_url, :length, :price, :release_year, :score
-  has_many :reviews
+  has_many :reviews, :order => "created_at DESC"
   has_many :users, :through => :reviews
   has_many :line_items
   before_destroy :check_that_no_line_items_exist

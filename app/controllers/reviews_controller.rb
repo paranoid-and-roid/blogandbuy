@@ -3,7 +3,7 @@ class ReviewsController < ApplicationController
   # GET /reviews
   # GET /reviews.json
   def index
-    @reviews = Review.paginate(page: params[:page], :per_page => 10).joins(:user)
+    @reviews = Review.paginate(page: params[:page], :per_page => 10)#.joins(:user)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -46,7 +46,11 @@ class ReviewsController < ApplicationController
 
     respond_to do |format|
       if @review.save
-        format.html { redirect_to films_url, notice: 'Thank you. Your review will be posted once it is checked by an administrator' }
+       # This is the original line of code, for when an editor must pass the review
+       # format.html { redirect_to films_url, notice: 'Thank you. Your review will be posted once it is checked by an administrator' }
+
+       # And the code I'm using for the deployment
+        format.html { redirect_to :back, notice: 'Your review has been successfully posted' }
         format.json { render json: @review, status: :created, location: @review }
       else
         format.html { render action: "new" }
@@ -61,9 +65,11 @@ class ReviewsController < ApplicationController
     @review = Review.find(params[:id])
 
     respond_to do |format|
-      @review.accepted = false
+      # @review.accepted = false
       if @review.update_attributes(params[:review])
-        format.html { redirect_to films_url, notice: 'Thank you. Your updated review will be posted once it is checked by an administrator' }
+       # format.html { redirect_to films_url, notice: 'Thank you. Your updated review will be posted once it is checked by an administrator' }
+
+        format.html { redirect_to films_path, notice: 'Your review has been successfully updated' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -79,7 +85,11 @@ class ReviewsController < ApplicationController
     @review.destroy
 
     respond_to do |format|
-      format.html { redirect_to reviews_url }
+      # The original line of code, for when an editor must pass the review
+      # format.html { redirect_to reviews_url }
+
+      # The code I'm using for the deployment
+      format.html { redirect_to :back, notice: 'Your review has been successfully deleted' }
       format.json { head :no_content }
     end
   end

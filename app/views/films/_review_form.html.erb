@@ -11,11 +11,11 @@
         </div>
     <% end %>
 
-    <fieldset>
+   <fieldset>
    <legend>Write a review of <span><%= @film.filmname %></span></legend>
       <% if !current_user %>
-      <p class = 'large'>You must be logged in to submit a review.<br> If you have an account, please  <%= link_to "sign in", new_user_session_path %><br> If not, please <%= link_to 'register', new_user_registration_path %></p>
-        <% end %>
+        <p class = 'large'>You must be logged in to submit a review.<br> If you have an account, please  <%= link_to "sign in", new_user_session_path %><br> If not, please <%= link_to 'register', new_user_registration_path %></p>
+      <% end %>
     <div class="field">
       <%= f.hidden_field :film_id %>
     </div>
@@ -40,7 +40,6 @@
     <div class="actions">
       <% if current_user %>
         <%= f.submit "Submit your review" %>
-
       <% end %>
     </div>
     </fieldset>

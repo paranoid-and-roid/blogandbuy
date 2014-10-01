@@ -41,18 +41,18 @@
   <%= number_to_currency(@film.price, :unit => '&euro;') %>
 </p>
 
-<%= button_to 'Add to my Cart', line_items_path(:film_id => @film) %>
+    <%= button_to 'Add to my Cart', line_items_path(:film_id => @film) %>
 </div> <br><br>
 
 <%= link_to 'Return to Film List', root_path, class: 'button' %>
-<% if current_user.try(:admin?) %>
-<%= link_to 'Edit Film', edit_film_path(@film), class: 'button' %>
-<%= link_to 'Delete Film', @film, method: :delete, class: 'button', data: {confirm: 'Are you sure?'} %>
-<%= link_to 'Create New Film', new_film_path, class: 'button' %><br><br>
+    <% if current_user.try(:admin?) %>
+    <%= link_to 'Edit Film', edit_film_path(@film), class: 'button' %>
+    <%= link_to 'Delete Film', @film, method: :delete, class: 'button', data: {confirm: 'Are you sure?'} %>
+    <%= link_to 'Create New Film', new_film_path, class: 'button' %><br><br>
 <% end %>
 
 
 <div id="partials" >
-<%= render :partial => 'review_index', :locals => {:reviews => @film.reviews} %> <br>
-<%= render :partial => 'review_form', :locals=>{:review => Review.new(:film_id => @film.id)} %>
+    <%= render :partial => 'review_index', :locals => {:reviews => @film.reviews} %> <br>
+    <%= render :partial => 'review_form', :locals=>{:review => Review.new(:film_id => @film.id) } %>
 </div>
