@@ -13,7 +13,7 @@
 
 
   <div class="field">
-    <%= f.label :filmname %><br />
+    <%= f.label :title %><br />
     <%= f.text_field :filmname %>
   </div>
   <div class="field">
@@ -29,11 +29,12 @@
     <%= f.text_field :director %>
   </div>
   <div class="field">
-    <%= f.label :image_url %><br />
-    <%= f.text_field :image_url %>
+    <%= f.label :image %><br />
+    <%= f.text_field :image_url %>  <!--  Have another look -->
+    <%= f.file_field :image_url %>
   </div>
   <div class="field">
-    <%= f.label :length %><br />
+    <%= f.label :length_of_film %><br />
     <%= f.text_field :length %>
   </div>
   <div class="field">

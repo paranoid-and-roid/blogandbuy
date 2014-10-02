@@ -1,14 +1,16 @@
 <h3 class = "form_title">User reviews for <span><em><%= @film.filmname %></em></span></h3>
 
   <% reviews.each do |review| %>
+     <!-- The if statement below has been commented out as part of the deployment -->
+     <!-- Normally, reviews would have to be vetted and passed by an administrator -->
      <%# if review.accepted?  %>
         <fieldset>
         <legend>Posted by <span class = 'large'><%= review.user.email %></span> on <%= review.created_at.to_formatted_s(:long) %></legend>
         <%= review.post %> <br> <br><br>
         <% if current_user && current_user.id == review.user_id %>
-        <%= link_to 'Edit', edit_review_path(review), class: 'button' %>
-        <%= link_to 'Destroy', review, method: :delete, data: { confirm: 'Are you sure you want to delete this review?' }, class: 'button' %>
+        <%= link_to 'Edit', edit_review_path(review), class: 'small_button' %>
+        <%= link_to 'Destroy', review, method: :delete, data: { confirm: 'Are you sure you want to delete this review?' }, class: 'small_button' %>
         <% end %>
         </fieldset>
-     <% #end %>
+     <%# end %>
   <% end %>
