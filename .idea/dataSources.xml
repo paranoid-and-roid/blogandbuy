@@ -4,7 +4,7 @@
     <data-source source="LOCAL" name="Rails BlogAndBuy: development" uuid="e8632288-c0eb-483f-90e0-5c08f53afb8f">
       <driver-ref>sqlite.xerial</driver-ref>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:C:\Users\Toshiba\Documents\BlogAndBuy\db\development.sqlite3</jdbc-url>
+      <jdbc-url>jdbc:sqlite:D:\Documents\BlogAndBuy\db\development.sqlite3</jdbc-url>
       <libraries>
         <library>
           <url>file://$USER_HOME$/.RubyMine40/config/jdbc-drivers/sqlite-jdbc-3.7.2.jar</url>
@@ -14,7 +14,7 @@
     <data-source source="LOCAL" name="Rails BlogAndBuy: test" uuid="9eec99b4-ce4e-4760-bd85-44b35e42fd22">
       <driver-ref>sqlite.xerial</driver-ref>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:C:\Users\Toshiba\Documents\BlogAndBuy\db\test.sqlite3</jdbc-url>
+      <jdbc-url>jdbc:sqlite:D:\Documents\BlogAndBuy\db\test.sqlite3</jdbc-url>
       <libraries>
         <library>
           <url>file://$USER_HOME$/.RubyMine40/config/jdbc-drivers/sqlite-jdbc-3.7.2.jar</url>

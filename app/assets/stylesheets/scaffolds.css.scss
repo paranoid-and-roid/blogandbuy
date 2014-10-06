@@ -1,5 +1,5 @@
 body {
-  background: #141;
+ // background: #141;
   color: #333;
   font-family: "Calibri Light", verdana, arial, helvetica, sans-serif;
   font-size: 16px;
@@ -19,7 +19,7 @@ header {
   background: #141;
   color: #fff;
   height: auto;
-  padding: 20px 0;
+  padding: 40px 0;
   margin-bottom:20px;
   border-radius: 20px;
   font-size: large;
@@ -95,20 +95,21 @@ div {
 
 h1, h2  {
   text-align:center;
+  padding: 20px;
 }
 
 h3 em {
   font-size: large;
 }
 
-dt {
+td dt {
   font-size: large;
   font-weight: bold;
   color: #141;
   margin-bottom: 10px;
 }
 
-dl {
+td dl {
   margin: 16px 0;
   width: 400px;
 }
@@ -161,22 +162,47 @@ table {
   margin-top: 40px;
 }
 
+#partials p, #partials h3 {
+  margin-left: 30px;
+}
+
 #paginate {
   text-align: center;
   margin: 20px 0;
 }
 
 fieldset {
-  text-align: left;
-  width: 80%;
+  width: 40%;
   border: 1px solid;
   border-radius: 5px;
   margin: 30px;
   padding: 20px;
+  background: #ddd;
 }
 
 fieldset p {
-  text-align: center;
+  text-align: left;
+}
+
+fieldset dt {
+  padding-bottom: 20px;
+}
+
+.special_fieldset {
+  width: 80%;
+  background: #fff;
+  padding: 20px;
+}
+
+.special_fieldset textarea {
+  width: 80%;
+}
+
+
+fieldset fieldset {
+  margin-left: 0;
+  background: #fff;
+
 }
 
 span {

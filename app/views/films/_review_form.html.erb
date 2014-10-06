@@ -10,8 +10,10 @@
         </div>
     <% end %>
 
-   <fieldset>
-   <legend>Write a review of <span><em><%= @film.filmname %></em></span></legend>
+
+   <p>Write a review of <span><em><%= @film.filmname %></em></span></p>
+   <fieldset class = "special_fieldset">
+
       <% if !current_user %>
         <p class = 'large'>You must be logged in to submit a review. If you have an account, please  <%= link_to "sign in", new_user_session_path %>. <br /> If not, please <%= link_to 'register', new_user_registration_path %></p>
       <% end %>
