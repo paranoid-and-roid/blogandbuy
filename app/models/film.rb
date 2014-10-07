@@ -49,9 +49,4 @@ class Film < ActiveRecord::Base
     average.round(2)
   end
 
-  def imdb(film_id)
-    film = Film.find(film_id)
-    Director::Film.Director(film.id)
-  end
-
 end

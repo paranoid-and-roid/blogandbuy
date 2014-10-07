@@ -136,6 +136,43 @@ p img {
   width: 300px;
 }
 
+.star_average {
+  margin-left: 30px;
+}
+
+#average_score {
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.goldstar {
+  position: relative;
+  top: -30px;
+  left: 0;
+  z-index: 10;
+}
+
+.goldstar img {
+  height: 29px;
+  width: 29px;
+  display: inline-block;
+  float: left;
+  background: #eee;
+}
+
+.slider {
+  height: 32px;
+  width: 50%;
+  background: #000;
+  opacity: 0.9;
+  position: relative;
+  top: -30px;
+  left: 0;
+  z-index: 100;
+}
+
 table {
   margin-bottom: 10px;
 }
