@@ -45,7 +45,7 @@ th, td {
 
 div {
   &.field, &.actions {
-    margin-bottom: 10px;
+    margin: 10px 30px;
   }
 }
 
@@ -234,16 +234,18 @@ fieldset dt {
   margin-top: 20px;
 }
 
-.review_button {
-  margin-left: 80px;
+.edit_fieldset {
+  background: #fff;
 }
 
 fieldset fieldset {
   margin-left: 0;
   background: #fff;
-
 }
 
+.review_button {
+  margin-left: 80px;
+}
 span {
   font: bold 25px sans-serif;
 }
