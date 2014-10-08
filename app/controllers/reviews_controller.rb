@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  before_filter :ensure_admin, :except => [:new, :create, :edit, :update, :destroy]
+  before_filter :ensure_admin, :except => [:create, :edit, :update, :destroy]
   # GET /reviews
   # GET /reviews.json
   def index
@@ -50,7 +50,8 @@ class ReviewsController < ApplicationController
        # format.html { redirect_to films_url, notice: 'Thank you. Your review will be posted once it is checked by an administrator' }
 
        # And the code I'm using for the deployment
-        format.html { redirect_to :back, notice: 'Your review has been successfully posted' }
+        flash[:notice] = 'Your review has been successfully posted'
+        format.html { redirect_to :back }
         format.json { render json: @review, status: :created, location: @review }
       else
         format.html { render action: "new" }
@@ -69,8 +70,8 @@ class ReviewsController < ApplicationController
       if @review.update_attributes(params[:review])
        # This is the original line of code, for when an editor must pass the review
        # format.html { redirect_to films_url, notice: 'Thank you. Your updated review will be posted once it is checked by an administrator' }
-
-        format.html { redirect_to films_path, notice: 'Your review has been successfully updated' }
+        flash[:notice] = 'Your review has been successfully updated.'
+        format.html { redirect_to :controller => 'films', :action => 'show', :id => @review.film.id }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -90,7 +91,8 @@ class ReviewsController < ApplicationController
       # format.html { redirect_to reviews_url }
 
       # The code I'm using for the deployment
-      format.html { redirect_to :back, notice: 'Your review has been successfully deleted' }
+      flash[:notice] = 'Your review has been successfully deleted'
+      format.html { redirect_to :back }
       format.json { head :no_content }
     end
   end

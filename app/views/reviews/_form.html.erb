@@ -31,7 +31,6 @@
     <%= f.radio_button :score, 5 %><%= f.label 'review_score', 5 %>
   </fieldset>
 
-
   <% if current_user.try(:admin) %>
       <div class="field">
          <%= f.label :accepted %><br />
