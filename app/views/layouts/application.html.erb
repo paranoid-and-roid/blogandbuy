@@ -21,14 +21,15 @@
       <% end %>
 
       <% if current_user.try(:admin) %>
+        <%= link_to 'Create New Film', new_film_path, class: 'button' %>
         <%= link_to "Reviews", reviews_path, class: 'button' %>
       <% end %>
 
     <div id="register">
         <% if user_signed_in? %>
-            <div>Signed in as... <span class = 'large'><%= current_user.email %></span> <%= link_to 'Sign out', destroy_user_session_path, :method => :delete, class: 'button' %> </div>
+            <div>Signed in as... <span class = 'large'><%= current_user.username %></span> <%= link_to 'Sign out', destroy_user_session_path, :method => :delete, class: 'button reg' %> </div>
         <% else %>
-            <%= link_to 'Register', new_user_registration_path, class: 'button' %> or <%= link_to 'Sign in', new_user_session_path, class: 'button' %>
+            <%= link_to 'Register', new_user_registration_path, class: 'button reg' %> or <%= link_to 'Sign in', new_user_session_path, class: 'button reg' %>
         <% end %>
     </div>
 </nav>
@@ -36,7 +37,7 @@
 <%= yield %>
 
 <footer>
-  <p>Copyright Patrick Dunlevy &copy; 2013</p>
+  <p>Copyright &copy; 2013</p>
 </footer>
 
 </div>

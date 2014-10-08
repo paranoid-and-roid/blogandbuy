@@ -1,4 +1,4 @@
-<h3 class = "form_title">User reviews for <span><em><%= @film.filmname %></em></span></h3>
+<p class = "form_title">User reviews for <span><em><%= @film.filmname %></em></span></p>
 
   <% reviews.each do |review| %>
      <!-- The if statement below has been commented out as part of the deployment -->
@@ -8,7 +8,7 @@
 
         <fieldset class = "special_fieldset">
         <dl>
-        <dt>Posted by <span class = 'large'><%= review.user.email %></span> on <%= review.created_at.to_formatted_s(:long) %></dt>
+        <dt>Posted by <span class = 'large'><%= review.user.username %></span> on <%= review.created_at.to_formatted_s(:long) %></dt>
         <dd><%= review.post %></dd> <br>
         </dl>
         <% if current_user && current_user.id == review.user_id %>

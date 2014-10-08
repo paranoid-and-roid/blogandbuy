@@ -21,7 +21,7 @@ header {
   height: auto;
   padding: 25px 0;
   margin-bottom:20px;
-  border-radius: 20px;
+  border-radius: 5px;
   font-size: large;
 }
 
@@ -30,21 +30,13 @@ footer {
   background: #141;
   color: #fff;
   padding: 20px 0;
-  border-radius: 20px;
+  border-radius: 5px;
   margin-top: 20px;
 }
 
 nav {
   padding-bottom: 20px;
   margin: 40px 30px 0 30px;
-}
-
-h3 {
-  padding-top: 40px;
-}
-
-h3 span {
-
 }
 
 th, td {
@@ -124,6 +116,11 @@ dd input {
 
 .form_title {
   text-align: left;
+  margin-top: 100px;
+}
+
+form div {
+  margin: 10px 0;
 }
 
 img {
@@ -205,7 +202,7 @@ table {
 
 #paginate {
   text-align: center;
-  margin: 20px 0;
+  margin: 20px 0 30px;
 }
 
 fieldset {
@@ -218,23 +215,28 @@ fieldset {
 }
 
 fieldset p {
-  text-align: left;
+  text-align: center;
 }
 
 fieldset dt {
   padding-bottom: 20px;
+  font-size: 20px;
 }
 
 .special_fieldset {
   width: 80%;
   background: #fff;
-  padding: 20px;
+  padding: 10px 30px 30px ;
 }
 
 .special_fieldset textarea {
   width: 80%;
+  margin-top: 20px;
 }
 
+.review_button {
+  margin-left: 80px;
+}
 
 fieldset fieldset {
   margin-left: 0;
@@ -243,46 +245,40 @@ fieldset fieldset {
 }
 
 span {
-  font: bold 20px sans-serif;
-  padding-left: 5px;
+  font: bold 25px sans-serif;
 }
 
+/*
 .large {
-  font: 15px;
+  font: 25px;
   font-weight: bold;
 }
+*/
 
 #post_review {
   margin-left: 80px;
 }
 
-/*
-textarea {
-  width: 80%;
-}
-
-fieldset fieldset {
-  width: 40%;
-  margin-left: 0;
-}
-*/
 #register {
   float: right;
 }
 
 .button, .small_button {
-  background: #595;
+  background: #373;
   color: #eee;
-  border-radius: 5px;
+  border-radius: 4px;
   text-decoration: none;
 }
 .button {
   padding: 10px;
-  //margin-left: 30px;
 }
 
 .small_button {
   padding: 5px 10px;
+}
+
+.reg {
+  margin: 0 10px;
 }
 
 fieldset button {

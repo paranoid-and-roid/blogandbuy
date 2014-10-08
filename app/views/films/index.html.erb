@@ -51,10 +51,4 @@
 
 <% end %>
 
-<nav>
-    <% if current_user.try(:admin?) %>
-        <%= link_to 'Create New Film', new_film_path, class: 'button' %>
-    <% end %>
-</nav>
-
 <div id="paginate"><%= will_paginate @films %></div>

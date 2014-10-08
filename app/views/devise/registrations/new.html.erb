@@ -3,17 +3,23 @@
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
+  <!--
   <div><%= f.label :email %><br />
   <%= f.email_field :email %></div>
+  -->
 
-  <div><%= f.label :password %><br />
+  <div><%= f.label :create_a_username %><br />
+  <%= f.text_field :username %></div>
+
+  <div><%= f.label :create_a_password %><br />
   <%= f.password_field :password %></div>
 
-  <div><%= f.label :password_confirmation %><br />
+  <div><%= f.label :confirm_password %><br />
   <%= f.password_field :password_confirmation %></div>
 
   <% if current_user.try(:admin?) %>
-     <div><%= f.check_box :admin %><br /></div>
+     <div><%= f.label :create_an_admin_user %><br />
+     <%= f.check_box :admin %><br /></div>
   <% end %>
 
   <div><%= f.submit "Sign up" %></div>

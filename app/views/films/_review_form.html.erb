@@ -15,7 +15,8 @@
    <fieldset class = "special_fieldset">
 
       <% if !current_user %>
-        <p class = 'large'>You must be logged in to submit a review. If you have an account, please  <%= link_to "sign in", new_user_session_path %>. <br /> If not, please <%= link_to 'register', new_user_registration_path %></p>
+        <p class = 'large'>You must be logged in to submit a review. If you have an account, please  <%= link_to "sign in", new_user_session_path, class: 'small_button' %>
+          <br /><br /> If not, please <%= link_to 'register', new_user_registration_path, class: 'small_button' %></p>
       <% end %>
 
     <div class="field">
@@ -41,7 +42,7 @@
 
         <div class="actions">
           <% if current_user %>
-            <%= f.submit "Submit your review" %>
+            <%= f.submit "Submit your review", class: 'review_button' %>
           <% end %>
         </div>
     </fieldset>

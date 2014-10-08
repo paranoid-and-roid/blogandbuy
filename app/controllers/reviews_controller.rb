@@ -67,6 +67,7 @@ class ReviewsController < ApplicationController
     respond_to do |format|
       # @review.accepted = false
       if @review.update_attributes(params[:review])
+       # This is the original line of code, for when an editor must pass the review
        # format.html { redirect_to films_url, notice: 'Thank you. Your updated review will be posted once it is checked by an administrator' }
 
         format.html { redirect_to films_path, notice: 'Your review has been successfully updated' }
