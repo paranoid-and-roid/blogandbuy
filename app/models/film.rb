@@ -22,7 +22,7 @@ class Film < ActiveRecord::Base
   validates_numericality_of :release_year,
                             :greater_than => 1895, :less_than_or_equal_to => Time.now.year,
                             :only_integer => true
-  validates :image_url, format: { with: %r{\.(gif|jpg|png)$}i, message: 'must be in the form GIF, JPG or PNG image.' }
+ # validates :image_url, format: { with: %r{\.(gif|jpg|png)$}i, message: 'must be in the form GIF, JPG or PNG image.' }
 
   def self.search(search_query)
     if search_query

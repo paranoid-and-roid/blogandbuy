@@ -35,9 +35,9 @@
              <% end %>
         </tr>
     </table>
-   <!--
+    <!--
    <div class = "star_average">
-   <div id = "average_score"><%= film.my_average_score(film.id) %></div>
+   <%= content_tag :div, class: 'average_score', data: {average: film.my_average_score(film.id)} do %><% end %>
       <div class = "goldstar">
       <%= image_tag('star.jpg') %>
       <%= image_tag('star.jpg') %>
@@ -47,8 +47,8 @@
     </div>
     <div class = "slider"></div>
     </div>
-	-->
-
+       <%#= film.my_average_score(film.id) %>
+    -->
 <% end %>
 
 <div id="paginate"><%= will_paginate @films %></div>
