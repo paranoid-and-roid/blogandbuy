@@ -1,10 +1,11 @@
-<p class = "form_title">User reviews for <span><em><%= @film.filmname %></em></span></p>
+<% unless reviews.empty? %>
+    <p class = "form_title">User reviews for <span><em><%= @film.filmname %></em></span></p>
+<% end %>
 
   <% reviews.each do |review| %>
      <!-- The if statement below has been commented out as part of the deployment -->
      <!-- Normally, reviews would have to be vetted and passed by an administrator -->
      <%# if review.accepted?  %>
-
 
         <fieldset class = "special_fieldset">
         <dl>
