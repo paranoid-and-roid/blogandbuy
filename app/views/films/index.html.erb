@@ -21,6 +21,7 @@
                   <dd><strong>Directed by: </strong><%= film.director %>
                   <dd><strong>First Released: </strong><%= film.release_year %></dd>
                   <dd><strong>Running Time: </strong><%= film.length %></dd>
+                  <dd><strong>User Rating: </strong><%= film.my_average_score(film.id) %></dd>
                   <dd><strong>Price: </strong><%= number_to_currency(film.price, :unit => '&euro;') %></dd>
                 <!-- <dd><dd><strong>Average Rating: </strong><%= film.my_average_score(film.id) %></dd></dd>  -->
                   <dd><%= button_to 'Add to my Cart', line_items_path(:film_id => film) %></dd>
@@ -47,8 +48,8 @@
     </div>
     <div class = "slider"></div>
     </div>
-       <%#= film.my_average_score(film.id) %>
     -->
+
 <% end %>
 
 <div id="paginate"><%= will_paginate @films %></div>

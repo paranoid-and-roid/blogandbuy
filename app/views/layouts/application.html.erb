@@ -14,7 +14,7 @@
   </header>
 
   <nav>
-      <%= link_to "Film Index", root_path, class: 'button' %>
+      <%= link_to "Film List", root_path, class: 'button' %>
 
       <% unless current_cart.line_items.empty? %>
          <%= link_to 'See Your Cart', see_your_cart_path, class: 'button' %>
@@ -37,7 +37,8 @@
 <%= yield %>
 
 <footer>
-  <p>Copyright &copy; 2013</p>
+  <p>Copyright &copy; 2013<br /></p>
+  <p>You can examine all the code for this page at my github, which can be accessed <a href = "https://github.com/paranoid-and-roid/blogandbuy" class = "grey">here</a></p>
 </footer>
 
 </div>

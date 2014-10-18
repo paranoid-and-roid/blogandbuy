@@ -1,5 +1,4 @@
 body {
- // background: #141;
   color: #333;
   font-family: "Calibri Light", verdana, arial, helvetica, sans-serif;
   font-size: 16px;
@@ -273,5 +272,14 @@ fieldset button {
 
 .new {
   margin: 20px 0;
+}
+
+.grey {
+    background: #ccc;
+    color: #333;
+    border-radius: 4px;
+    text-decoration: none;
+    padding: 5px;
+    margin-left: 3px;
 }
 
